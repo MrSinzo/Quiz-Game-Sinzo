@@ -9,22 +9,25 @@
 </head>
 <body>
   <nav>
-    <h4>View High-Scores!</h4><!--Need link in here to click on page with saved highscores-->
-    <h4>Timer: <span class="timer"></span> </h4>
+    <h4>View High-Scores!</h4>
+    <h4>Timer: <span class="timer"></span></h4>
   </nav>
 
-  <div class="pageOpen" data-state = "hidden">
+  <div class="pageOpen"> <!-- need a starter "slide" for criteria. When user hits "start" button the timer will start and 
+    questions will "carousel" into the screen, removing the "Welcome to the... " text replacing it with questions. -->
     <p>Welcome to the coding quiz! Click "Start" to begin your timed quiz!</p>
-    <button class="start">Start</button>
+    <button id="start">Start</button>
   </div>
   <div>
-    <p class="quiz">
-      <button id="buttonA" data-ansA = "A"></button>
+    <p class="quiz"> <!-- i think i can get this element to display question above answer buttons?-->
+      <button id="buttonA" data-ansA = "A"></button><!--attempting to get these buttons to swap answers as different questions proc. --> 
       <button id="buttonB" data-ansB = "B"></button>
       <button id="buttonC" data-ansC = "C"></button>
       <button id="buttonD" data-ansD = "D"></button>
     </p>
   </div>
+
+<!-- <script src="scriptTests.js"></script> -->
   <script src="./assets/script.js"></script>
 </body>
 </html>
