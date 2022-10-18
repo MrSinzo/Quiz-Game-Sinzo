@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style.css"/>
+  <title>The Code Quiz!</title>
+</head>
+<body>
+  <nav>
+    <h4>View High-Scores!</h4><!--Need link in here to click on page with saved highscores-->
+    <h4>Timer: <span class="timer"></span> </h4>
+  </nav>
+
+  <div class="pageOpen" data-state = "hidden">
+    <p>Welcome to the coding quiz! Click "Start" to begin your timed quiz!</p>
+    <button class="start">Start</button>
+  </div>
+  <div>
+    <p class="quiz">
+      <button id="buttonA" data-ansA = "A"></button>
+      <button id="buttonB" data-ansB = "B"></button>
+      <button id="buttonC" data-ansC = "C"></button>
+      <button id="buttonD" data-ansD = "D"></button>
+    </p>
+  </div>
+  <script src="./assets/script.js"></script>
+</body>
+</html>
+
+
+<!--
+Needs:
+display view highscores on upper left, disaply time on upper right.
+need multiple questions to use for quiz
+Types of Questions for quiz?
+
+1. Fill in the blank! // Entered in 
+  I assigned a ______ of 4 to my variable named numbers!
+  a. declartion
+  b. value
+  c. tag
+  4. index
+
+2. What is the purpose of Html for a web browser?
+  a. It makes things look pretty.
+  b. It will run functions in the browser.
+  c. It helps provide structure to a browser.
+  d. It will create a grid for my browser to lay out text and images.
+
+3. What does the operator += do in JavaScript?
+  a. It subtracts values
+  b. It disables a block of code
+  c. It adds to a value or string
+  d. It is used to multiply numbers
+
+4. 
+
+-->
+<!--
+  Questions:
+  Priority:
+  Do i need to flex box the questions disaplay area? // Seems to work
+
+  Secondary
+  how will i display the scoreboard page? must be saved locally for the criteria
+-->
+
+<!--
+  Things i will need to do ;
+  -coding quiz challenge has "Cover page", "prompting" user to start, 
+  probaly same methods to set up questions, but probably based on if else statements
+  -set up flex box for highscores and timer ( timer may be appended in?)
+  -make more questions for quiz
+  -if statements for when question answered incorrectly, will reduce time by TBD
+  -declare vars and hook into html via javascript
+  -may need function to run thru questions and possibly a for loop to run thru questions
+  -need keydown events for the questions answers. 
+-->

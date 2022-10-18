@@ -1,0 +1,24 @@
+nav {
+  display: flex;
+  margin: 20px;
+  justify-content: space-between;
+}
+
+.pageOpen {
+  text-align: center;
+}
+
+.quiz{
+  display: flex;
+  justify-content: center;
+}
+
+#buttonA,
+#buttonB,
+#buttonC,
+#buttonD
+{
+  display: none;
+  width: 100px;
+  height: 20px;
+}
