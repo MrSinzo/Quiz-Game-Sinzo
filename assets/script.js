@@ -1,24 +1,62 @@
-// var quizCarousel = document.querySelector("quiz"); // dont seem to need this code 
 var counter = document.querySelector(".timer");
-// var start = document.querySelector("start"); // dont seem to need this code 
-
+var welcome = document.querySelector(".pageOpen");
 var secondsRemain = 500;
-var question1 =
-  "1. Fill in the blank!:\nI assigned a ______ of 4 to my variable named numbers!"; // does the \n (newline) not work in JavaScript?
-var qBoxAnswers1 = ["A. declartion", "B. value", "C. tag", "D. index"]; // would assume i need to link answers by index to buttons
+var quiz1stQuestion = [0];
+var listEl = document.createElement("ol", []);
+var answer1 = document.createElement("li", [0]);
+var answer2 = document.createElement("li", [1]);
+var answer3 = document.createElement("li", [2]);
+var answer4 = document.createElement("li", [3]);
+document.getElementById("start").addEventListener("click", tickTock, runGame); // activates timer when "start" button is clicked
 
-document.getElementById("start").addEventListener("click", tickTock); // activates timer when "start" button is clicked
+function runGame(event) {
+  // not sure why this function wont bring up the questions , may need appends
+  // var state = element.getAttribute("data-state"); 
+  choices.addEventListener("click", theQuestions++); // theQuestions ++; method not working?
+  if (event) {
+    welcome.setAttribute("style", "display:none")
+  }
+    
 
-function runQuiz() {
-  quizCarousel.textContent = "Welcome to the quiz!";
-  quizCarousel.textContent;
+
+  var theQuestions = [
+    {
+      title:
+        "1. Fill in the blank!:\nI assigned a ______ of 4 to my variable named numbers!",
+      choices: ["A. declartion", "B. value", "C. tag", "D. index"],
+      answer: "B. value",
+      
+    },
+    {
+      title: "2. What is the purpose of Html for a web browser?",
+      choices: [
+        "A. It makes things look pretty.",
+        "B. It will run functions in the browser.",
+        "C. It helps provide structure to a browser.",
+        "D. It will create a grid for my browser to lay out text and images.",
+      ],
+      answer: "C. It helps provide structure to a browser.",
+    },
+    {
+      title: "3. What does the operator += do in JavaScript?",
+      choices: [
+        "A. It subtracts values",
+        "B. It disables a block of code",
+        "C. It adds to a value or string",
+        "D. It is used to multiply numbers",
+      ],
+      answer: "C. It adds to a value or string",
+    },
+    title.appendChild(listEl),
+    theQuestions.choices.appendChild(li)
+  ];
+
+  // need to append titles/choices/answers in here i think?
 }
 
-
 function tickTock() {
+  // function to count down seconds, needs seperate variable with number value for 'seconds'
   var timerInterval = setInterval(function () {
-    // may need if statement for staring the clock when user clicks on start quiz
-    
     secondsRemain--;
 
     counter.textContent = secondsRemain;
@@ -28,11 +66,10 @@ function tickTock() {
 
       // showScore();
     }
-  }, 1000); // make sure this is set to 1000 before turn in 
+  }, 1000); // make sure this is set to 1000 before turn in
 }
 
 //Will need a function to showscore at end of quiz, and place to inputuser intials and save it to local storage with "score"
 function showScore() {
   counter.textContent = " ";
 }
-// runQuiz();
