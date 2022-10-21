@@ -4,16 +4,34 @@ nav {
   justify-content: space-between;
 }
 
-.pageOpen {
+/* .pageOpen {
+  position: relative;
+  display: flex;
   text-align: center;
-}
+  justify-content: center;
+} */
+
+
+/* #startBtn{
+  color: yellow;
+  background-color: gray;
+  display:flex;
+  background: #8a8686;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+   margin-right: auto; }
+  */
+
+
+
 
 .quiz{
   display: flex;
   justify-content: center;
 }
 
-#buttonA,
+/* #buttonA,
 #buttonB,
 #buttonC,
 #buttonD
@@ -21,6 +39,6 @@ nav {
   display: none;
   width: 100px;
   height: 20px;
-}
+} */
 
 /*Testing*/
