@@ -8,12 +8,6 @@ var startBtnBox = document.getElementById("startBtn");
 var qBox = document.getElementById("quizBox"); //qBox hook to html
 qBox.setAttribute("style", "text-align:center"); // slight styling for qBox element
 
-// var theQuestionsTitle1 =
-//   "1. Fill in the blank!:\nI assigned a ______ of 4 to my variable named numbers!";
-// var question1Choices = ["A. declartion", " B. value", " C. tag", " D. index"];
-// var question1Answer = question1Choices[1];
-// var theQuestionsTitle2 = "2. What is the purpose of Html for a web browser?";
-
 var theQuestions = [
   {
     title:
@@ -42,6 +36,9 @@ var theQuestions = [
     answer: "C. It adds to a value or string",
   },
 ];
+var q1Answer = theQuestions[0].choices[1];
+var q2Answer = theQuestions[1].choices[2];
+var q3Answer = theQuestions[2].choices[3];
 
 // var scoreBox = document.getElementById("showScore");
 
@@ -65,29 +62,50 @@ function pageIntro() {
   );
 } // DONT TOUCH THIS CODE BLOCK! ^ (excluding the styles for the start button)
 
-function runGame() {
-  welcome.setAttribute("style", "display:none");
-  startBtnBox.setAttribute("style", "display:none");
-  // we have an ol with var name qBox
-  // we need li's appended to the ol with the choices inside
-  question1()
-  function question1() {
-  body.appendChild(qBox);
-  qBox.textContent = theQuestions[0].title; // this is working
-  var choice1 = document.createElement("li");
-  var choice2 = document.createElement("li");
-  var choice3 = document.createElement("li");
-  var choice4 = document.createElement("li");
-  choice1.textContent = theQuestions[0].choices[0];
-  choice2.textContent = theQuestions[0].choices[1];
-  choice3.textContent = theQuestions[0].choices[2];
-  choice4.textContent = theQuestions[0].choices[3];
-  qBox.appendChild(choice1);
-  qBox.appendChild(choice2);
-  qBox.appendChild(choice3);
-  qBox.appendChild(choice4);
+function runGame() { // function will run once start button is clicked
+  welcome.setAttribute("style", "display:none"); // Removes intro text
+  startBtnBox.setAttribute("style", "display:none"); // removes start button
+  question1(); // procs 1st question
+  function question1() { // function for 1st question
+    body.appendChild(qBox); // applies container to body
+    qBox.textContent = theQuestions[0].title; // this is working // shows 1st question txt 
+    var choice1 = document.createElement("li"); // var choice1-4 create the <li>'s for the choices 
+    var choice2 = document.createElement("li");
+    var choice3 = document.createElement("li");
+    var choice4 = document.createElement("li");
+    choice1.textContent = theQuestions[0].choices[0]; // puts the choices text content into <li>'s
+    choice2.textContent = theQuestions[0].choices[1];
+    choice3.textContent = theQuestions[0].choices[2];
+    choice4.textContent = theQuestions[0].choices[3];
+// event listeners for click-able answers
+    choice1.addEventListener("click", function handleClick(ev) {
+      console.log("Clicked choice 1", ev);
+    });
+    choice2.addEventListener("click", function handleClick(ev) {
+      console.log("Clicked choice 2", ev);
+    });
+    choice3.addEventListener("click", function handleClick(ev) {
+      console.log("Clicked choice 3", ev);
+    });
+    choice4.addEventListener("click", function handleClick(ev) {
+      console.log("Clicked choice 4", ev);
+    });
+
+
+    // if () {
+    //   question2()
+    // } else {
+    //   secondsRemain -= 100
+    // }
+
+    qBox.appendChild(choice1);
+    qBox.appendChild(choice2);
+    qBox.appendChild(choice3);
+    qBox.appendChild(choice4);
   }
-  // qBox.textContent = theQuestionsTitle1 + "    Am i showing?"; 
+  // question2()  /* Reactivate once you figured out how to get the correct answer from question1 to move onto next question */
+
+  // qBox.textContent = theQuestionsTitle1 + "    Am i showing?";
   // var ans1 = document.createElement("li")
 
   // console.log(qBox);
@@ -105,6 +123,11 @@ function runGame() {
   // }
   tickTock();
 }
+
+function question2() {
+  console.log("succesfully moved on to 2nd question");
+}
+
 
 function tickTock() {
   // function to count down seconds, needs seperate variable with number value for 'seconds'
@@ -160,3 +183,9 @@ function tickTock() {
 //   // }
 //   tickTock();
 // }
+
+// var theQuestionsTitle1 =
+//   "1. Fill in the blank!:\nI assigned a ______ of 4 to my variable named numbers!";
+// var question1Choices = ["A. declartion", " B. value", " C. tag", " D. index"];
+// var question1Answer = question1Choices[1];
+// var theQuestionsTitle2 = "2. What is the purpose of Html for a web browser?";
