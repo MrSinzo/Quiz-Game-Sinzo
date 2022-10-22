@@ -14,50 +14,19 @@
     </nav>
 
     <div class="pageOpen">
-      <p><button id="startBtn">Start</button></p>
+      <p><button id="startBtn"></button></p>
     </div>
-    
+
     <div>
-      <ol id="quizBox">
-        <!-- having these li's premade inserts them into DOM at wrong time 
-        might have to insert these with appends-->
-        <!-- <li id="choiceSlot1"></li>
-        <li id="choiceSlot2"></li>
-        <li id="choiceSlot3"></li>
-        <li id="choiceSlot4"></li> -->
-      </ol>
+      <ol id="quizBox"></ol>
     </div>
-    <div id="showScore"></div> <!-- has no link to java yet -->
+    <div id="showScore">
+      <form id="scoreBoard">
+
+      </form>
+    </div>
+    <!-- ^has no link to java yet^ -->
     <!-- <script src="scriptTests.js"></script> -->
     <script src="./assets/script.js"></script>
   </body>
 </html>
-
-<!--
-Needs:
-display view highscores on upper left, disaply time on upper right.
-need multiple questions to use for quiz
-Types of Questions for quiz?
-
-
-4. 
-
--->
-<!--
-  Questions:
-  Priority:
-  Do i need to flex box the questions disaplay area? // Seems to work
-
-  Secondary
-  how will i display the scoreboard page? must be saved locally for the criteria
--->
-
-<!--
-  Things i will need to do ;
-  -set up flex box for highscores and timer ( timer may be appended in?)
-  -make more questions for quiz
-  -if statements for when question answered incorrectly, will reduce time by TBD
-  -declare vars and hook into html via javascript
-  -may need function to run thru questions and possibly a for loop to run thru questions
-  -need keydown events for the questions answers. 
--->
