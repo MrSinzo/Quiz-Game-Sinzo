@@ -80,6 +80,7 @@ function runGame() { // function will run once start button is clicked
 // event listeners for click-able answers
     choice1.addEventListener("click", function handleClick(ev) {
       console.log("Clicked choice 1", ev);
+      console.log(ev.target)
     });
     choice2.addEventListener("click", function handleClick(ev) {
       console.log("Clicked choice 2", ev);
@@ -105,17 +106,7 @@ function runGame() { // function will run once start button is clicked
   }
   // question2()  /* Reactivate once you figured out how to get the correct answer from question1 to move onto next question */
 
-  // qBox.textContent = theQuestionsTitle1 + "    Am i showing?";
-  // var ans1 = document.createElement("li")
 
-  // console.log(qBox);
-  // qBox.textContent = theQuestions; //this line is presenting the [object, Object.. text while active, its grabbing something but keeps declaring it undefined
-
-  // qBox.textContent = theQuestions[0].title;
-  // answerBox.textContent = theQuestions[0].choices; // this overwirtes the previous line of code
-
-  // console.log(answerBox)
-  // qBox.appendChild(theQuestions) doesnt work
   // theQuestions++ may need an if-statement
   // need to append titles/choices/answers in here i think?
   // for (i= 0; i < theQuestions; theQuestions++)
@@ -148,44 +139,3 @@ function tickTock() {
 // function showScore() {
 //   counter.textContent = " ";
 // }
-
-// var quiz1stQuestion = [0];
-// var listEl = document.createElement("ol", []);
-// var answer1 = document.createElement("li");
-// var answer2 = document.createElement("li");
-// var answer3 = document.createElement("li");
-// var answer4 = document.createElement("li");
-
-// This code originally inside the runGame Func not sure why this function wont bring up the questions , may need appends?
-// var state = element.getAttribute("data-state");
-// answer1.addEventListener("click", theQuestions);
-// answer2.addEventListener("click", theQuestions);
-// answer3.addEventListener("click", theQuestions);
-// answer4.addEventListener("click", theQuestions); // theQuestions ++; does not go in the event listener bit
-
-// function runGame() {
-//   welcome.setAttribute("style", "display:none");
-//   startBtnBox.setAttribute("style", "display:none");
-//   var ans1
-
-//   // console.log(qBox);
-//   // qBox.textContent = theQuestions; //this line is presenting the [object, Object.. text while active, its grabbing something but keeps declaring it undefined
-//   // qBox.textContent = theQuestionsTitle1;
-//   // qBox.textContent = theQuestions[0].title;
-//   // answerBox.textContent = theQuestions[0].choices; // this overwirtes the previous line of code
-
-//   // console.log(answerBox)
-//   // qBox.appendChild(theQuestions) doesnt work
-//   // theQuestions++ may need an if-statement
-//   // need to append titles/choices/answers in here i think?
-//   // for (i= 0; i < theQuestions; theQuestions++)
-//   // {
-//   // }
-//   tickTock();
-// }
-
-// var theQuestionsTitle1 =
-//   "1. Fill in the blank!:\nI assigned a ______ of 4 to my variable named numbers!";
-// var question1Choices = ["A. declartion", " B. value", " C. tag", " D. index"];
-// var question1Answer = question1Choices[1];
-// var theQuestionsTitle2 = "2. What is the purpose of Html for a web browser?";
