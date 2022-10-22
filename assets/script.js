@@ -4,7 +4,7 @@ var body = document.body;
 
 var welcome = document.querySelector(".pageOpen"); //same as? (without const becuase we want to change the visbility of this variable) const quizContainer = document.getElementById('quiz');
 var startBtnBox = document.getElementById("startBtn");
-var initialsBox = document.createElement("form")
+var initialsBox = document.createElement("form");
 var scoreBoardEl = document.getElementById("scoreBoard");
 var qBox = document.getElementById("quizBox"); //qBox hook to html
 qBox.setAttribute("style", "text-align:center"); // slight styling for qBox element
@@ -134,7 +134,6 @@ function runGame() {
   }
   tickTock();
 }
-
 function question2() {
   body.appendChild(qBox);
   qBox.textContent = theQuestions[1].title;
@@ -191,7 +190,6 @@ function question2() {
     question3();
   });
 }
-
 function question3() {
   body.appendChild(qBox);
   qBox.textContent = theQuestions[2].title;
@@ -329,14 +327,15 @@ May need a return to call the remaining seconds to the variable secondsRemain, o
 //Will need a function to showscore at end of quiz, and place to inputuser intials and save it to local storage with "score"
 function showScore() {
   qBox.setAttribute("style", "display:none");
-  body.appendChild(scoreBoardEl)
-  scoreBoardEl.setAttribute("style", "font-size:26px; text-align:center")
-  body.appendChild(initialsBox)
-  scoreBoardEl.textContent = "Thanks for playing! Input your initials to track your High Scores!"
+  body.appendChild(scoreBoardEl);
+  scoreBoardEl.setAttribute("style", "font-size:26px; text-align:center");
+  body.appendChild(initialsBox);
+  scoreBoardEl.textContent =
+    "Thanks for playing! Input your initials to track your High Scores!";
   score = counter.textContent;
-  console.log(score)
+  console.log(score);
 }
-//check activities for the local storage set up 
+//check activities for the local storage set up
 // will need these inputted somehow
-// JSON.parse(window.localStorage.getItem("highscores")) 
+// JSON.parse(window.localStorage.getItem("highscores"))
 // window.localStorage.setItem("highscores", JSON.stringify(highscores))

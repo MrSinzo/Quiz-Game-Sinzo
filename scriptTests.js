@@ -1,3 +1,4 @@
+////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 var counter = document.querySelector(".timer");
 var secondsRemain = 70;
 var body = document.body;
@@ -7,6 +8,7 @@ var startBtnBox = document.getElementById("startBtn");
 
 var qBox = document.getElementById("quizBox"); //qBox hook to html
 qBox.setAttribute("style", "text-align:center"); // slight styling for qBox element
+////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 var theQuestions = [
   {
     title:
@@ -45,7 +47,7 @@ var theQuestions = [
     answer: "D. Lets you add properties to style your browser",
   },
 ];
-
+////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 // var scoreBox = document.getElementById("showScore");
 
 pageIntro();
@@ -67,7 +69,7 @@ function pageIntro() {
     "font-size:30px; color:yellow; background:gray; width:200px; height:50px;"
   );
 } // DONT TOUCH THIS CODE BLOCK! ^ (excluding the styles for the start button)
-
+////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function runGame() {
   // function will run once start button is clicked
   welcome.setAttribute("style", "display:none"); // Removes intro text
@@ -121,7 +123,7 @@ function runGame() {
   }
   tickTock();
 }
-
+////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function question2() {
   body.appendChild(qBox);
   qBox.textContent = theQuestions[1].title;
@@ -166,7 +168,7 @@ function question2() {
     question3();
   });
 }
-
+////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function question3() {
   body.appendChild(qBox);
   qBox.textContent = theQuestions[2].title;
@@ -210,6 +212,7 @@ function question3() {
     question4();
   });
 }
+////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function question4() {
   body.appendChild(qBox);
   qBox.textContent = theQuestions[3].title;
@@ -260,7 +263,7 @@ function question4() {
 }
 score = secondsRemain;
 console.log(score)
-
+////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function tickTock() {
   // function to count down seconds, needs seperate variable with number value for 'seconds'
   var timerInterval = setInterval(function () {
@@ -282,3 +285,4 @@ function showScore() {
   qBox.setAttribute("style", "display:none")
   score = counter.textContent;
 }
+////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
