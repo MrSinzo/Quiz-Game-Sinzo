@@ -339,8 +339,6 @@ function showScore() {
     "style",
     "display:flex justify-content:center; align-items:center"
   );
-
-  // ini
   submitHS.setAttribute("style", "display:block-inline")
   submitHS.addEventListener("click", function(event) {
     event.preventDefault();

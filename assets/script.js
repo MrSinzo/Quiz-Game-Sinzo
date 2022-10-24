@@ -4,6 +4,7 @@ var body = document.body;
 var welcome = document.querySelector(".pageOpen"); //same as? (without const becuase we want to change the visbility of this variable) const quizContainer = document.getElementById('quiz');
 var startBtnBox = document.getElementById("startBtn");
 var qBox = document.getElementById("quizBox"); //qBox hook to html
+qBox.setAttribute("style", "text-align:center"); // slight styling for qBox element
 var scoreBoardEl = document.getElementById("scoreBoard");
 var initialsInput = document.getElementById("initials");
 initialsInput.setAttribute("style", "display:none");
@@ -11,7 +12,9 @@ var initialsLabel = document.getElementById("initialsLabel");
 initialsLabel.setAttribute("style", "display:none");
 var submitHS = document.getElementById("submit");
 submitHS.setAttribute("style", "display:none");
-qBox.setAttribute("style", "text-align:center"); // slight styling for qBox element
+var endScoreDisplay = document.getElementById("timeLeft")
+var seeHighScores = document.getElementById("hsButton")
+
 var theQuestions = [
   {
     title:
@@ -247,6 +250,7 @@ function question3() {
     question4();
   });
 }
+let endScore = counter.textContent
 function question4() {
   body.appendChild(qBox);
   qBox.textContent = theQuestions[3].title;
@@ -301,18 +305,17 @@ function question4() {
     console.log(ev.target.textContent);
     showScore();
   });
-  
+  // return endScore;
 }
-let score = counter.textContent
+
 function tickTock() {
   var timerInterval = setInterval(function () {
     secondsRemain--;
     counter.textContent = secondsRemain;
-
+    
 
     if (secondsRemain === 0 || secondsRemain < 0) {
       clearInterval(timerInterval);
-      showScore();
     }
   }, 1000);
 }
@@ -322,15 +325,20 @@ function showScore() {
   body.appendChild(scoreBoardEl);
   scoreBoardEl.setAttribute(
     "style",
-    "font-size:26px; text-align:center; background:yellow;"
+    "display:flex; font-size:26px; text-align:center; background:yellow;"
   );
   body.appendChild(initialsLabel);
   body.appendChild(initialsInput);
-  body.appendChild
+  body.appendChild(endScoreDisplay);
+  body.appendChild(submitHS);
+  submitHS.setAttribute("style", "display:flex;");
+  submitHS.textContent = "Save Your High Score!"
+  endScoreDisplay.setAttribute("style", "display:flex; justify-content:center")
+  endScoreDisplay.textContent = "Your Score is " + counter.textContent; // Shows the user what their score was. 
   scoreBoardEl.textContent =
     "Thanks for playing! Input your Initials to track your High Scores!";
-  score = counter.textContent;
-  console.log(score)
+  endScore = counter.textContent;
+  console.log(endScore)
   initialsLabel.setAttribute(
     "style",
     "display:flex; align-items:center; flex-direction:column"
@@ -341,16 +349,16 @@ function showScore() {
   );
   submitHS.addEventListener("click", function(event) {
     event.preventDefault();
-    // submitHS.setAttribute("style", "display:flex;"); // not displaying button
     var highScore = {
-      initials: initialsInput.value.trim(),
-      score: score.value.trim(),
+      initials: initialsInput.value,
+      endScore: endScore,
     }
     localStorage.setItem("highScore", JSON.stringify(highScore));
   });
 }
+seeHighScores.addEventListener("click", function(){
+  window.localStorage.getItem("highScore")
+  JSON.parse(window.localStorage.getItem("highScore"));
 
-//check activities for the local storage set up
-// will need these inputted somehow
-// --> JSON.parse(window.localStorage.getItem("highscores"))
-// --> window.localStorage.setItem("highscores", JSON.stringify(highscores))
+})
+
