@@ -23,12 +23,13 @@ This doesnt really solve anyones problem except in the case of training your min
 
 
 ## How did I go about building this?
-A small mix of HTML, and a ton (And i mean a ton ) of JavaScript were used and carefully constructed so that each question is clickable with a "view past high score" button to check your progress
+A small mix of HTML, and a ton (And i mean a ton ) of JavaScript were used and carefully constructed so that each question is clickable with a "view past high score" button to check your progress.
+I did attempt to put all of this into a for loop with if-statements, but i was unable to get it working properly. I may re-attempt implementing it at a later date.
 
 ## Screenshot of working application and URL link
-![ScreenShot of Deplyed Application](/)
+![ScreenShot of Deplyed Application](/Coding_Quiz_ss.png)
 
-Deployed Website Link [Click Here!]()
+Deployed Website Link [Click Here!](https://mrsinzo.github.io/Quiz-Game-Sinzo/)
 
 ## Credits and Licenses
 Using MIT License [Check it here!](https://opensource.org/licenses/MIT)
