@@ -1,14 +1,17 @@
-////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 var counter = document.querySelector(".timer");
 var secondsRemain = 70;
 var body = document.body;
-
 var welcome = document.querySelector(".pageOpen"); //same as? (without const becuase we want to change the visbility of this variable) const quizContainer = document.getElementById('quiz');
 var startBtnBox = document.getElementById("startBtn");
-
 var qBox = document.getElementById("quizBox"); //qBox hook to html
+var scoreBoardEl = document.getElementById("scoreBoard");
+var initialsInput = document.getElementById("initials");
+var initialsLabel = document.getElementById("initialsLabel");
+initialsLabel.setAttribute("style", "display:none");
+initialsInput.setAttribute("style", "display:none");
+var submitHS = document.getElementById("submit");
+submitHS.setAttribute("style", "display:none");
 qBox.setAttribute("style", "text-align:center"); // slight styling for qBox element
-////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 var theQuestions = [
   {
     title:
@@ -47,7 +50,7 @@ var theQuestions = [
     answer: "D. Lets you add properties to style your browser",
   },
 ];
-////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 // var scoreBox = document.getElementById("showScore");
 
 pageIntro();
@@ -69,7 +72,7 @@ function pageIntro() {
     "font-size:30px; color:yellow; background:gray; width:200px; height:50px;"
   );
 } // DONT TOUCH THIS CODE BLOCK! ^ (excluding the styles for the start button)
-////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 function runGame() {
   // function will run once start button is clicked
   welcome.setAttribute("style", "display:none"); // Removes intro text
@@ -96,10 +99,22 @@ function runGame() {
     qBox.appendChild(choice2);
     qBox.appendChild(choice3);
     qBox.appendChild(choice4);
-    choice1.setAttribute("style", "font-size:30px; color:white; background:purple");
-    choice2.setAttribute("style", "font-size:30px; color:white; background:purple");
-    choice3.setAttribute("style", "font-size:30px; color:white; background:purple");
-    choice4.setAttribute("style", "font-size:30px; color:white; background:purple");
+    choice1.setAttribute(
+      "style",
+      "font-size:30px; color:white; background:purple"
+    );
+    choice2.setAttribute(
+      "style",
+      "font-size:30px; color:white; background:purple"
+    );
+    choice3.setAttribute(
+      "style",
+      "font-size:30px; color:white; background:purple"
+    );
+    choice4.setAttribute(
+      "style",
+      "font-size:30px; color:white; background:purple"
+    );
     // event listeners for click-able answers
     choice1.addEventListener("click", function handleClick(ev) {
       console.log(ev.target.textContent);
@@ -123,7 +138,6 @@ function runGame() {
   }
   tickTock();
 }
-////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function question2() {
   body.appendChild(qBox);
   qBox.textContent = theQuestions[1].title;
@@ -143,10 +157,22 @@ function question2() {
   qBox.appendChild(choice2);
   qBox.appendChild(choice3);
   qBox.appendChild(choice4);
-  choice1.setAttribute("style", "font-size:30px; color:white; background:purple");
-  choice2.setAttribute("style", "font-size:30px; color:white; background:purple");
-  choice3.setAttribute("style", "font-size:30px; color:white; background:purple");
-  choice4.setAttribute("style", "font-size:30px; color:white; background:purple");
+  choice1.setAttribute(
+    "style",
+    "font-size:30px; color:white; background:purple"
+  );
+  choice2.setAttribute(
+    "style",
+    "font-size:30px; color:white; background:purple"
+  );
+  choice3.setAttribute(
+    "style",
+    "font-size:30px; color:white; background:purple"
+  );
+  choice4.setAttribute(
+    "style",
+    "font-size:30px; color:white; background:purple"
+  );
   //
   choice1.addEventListener("click", function handleClick(ev) {
     console.log(ev.target.textContent);
@@ -168,7 +194,6 @@ function question2() {
     question3();
   });
 }
-////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function question3() {
   body.appendChild(qBox);
   qBox.textContent = theQuestions[2].title;
@@ -188,10 +213,22 @@ function question3() {
   qBox.appendChild(choice2);
   qBox.appendChild(choice3);
   qBox.appendChild(choice4);
-  choice1.setAttribute("style", "font-size:30px; color:white; background:purple");
-  choice2.setAttribute("style", "font-size:30px; color:white; background:purple");
-  choice3.setAttribute("style", "font-size:30px; color:white; background:purple");
-  choice4.setAttribute("style", "font-size:30px; color:white; background:purple");
+  choice1.setAttribute(
+    "style",
+    "font-size:30px; color:white; background:purple"
+  );
+  choice2.setAttribute(
+    "style",
+    "font-size:30px; color:white; background:purple"
+  );
+  choice3.setAttribute(
+    "style",
+    "font-size:30px; color:white; background:purple"
+  );
+  choice4.setAttribute(
+    "style",
+    "font-size:30px; color:white; background:purple"
+  );
   choice1.addEventListener("click", function handleClick(ev) {
     console.log(ev.target.textContent);
     secondsRemain -= 15;
@@ -212,7 +249,6 @@ function question3() {
     question4();
   });
 }
-////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function question4() {
   body.appendChild(qBox);
   qBox.textContent = theQuestions[3].title;
@@ -232,57 +268,91 @@ function question4() {
   qBox.appendChild(choice2);
   qBox.appendChild(choice3);
   qBox.appendChild(choice4);
-  choice1.setAttribute("style", "font-size:30px; color:white; background:purple");
-  choice2.setAttribute("style", "font-size:30px; color:white; background:purple");
-  choice3.setAttribute("style", "font-size:30px; color:white; background:purple");
-  choice4.setAttribute("style", "font-size:30px; color:white; background:purple");
-
+  choice1.setAttribute(
+    "style",
+    "font-size:30px; color:white; background:purple"
+  );
+  choice2.setAttribute(
+    "style",
+    "font-size:30px; color:white; background:purple"
+  );
+  choice3.setAttribute(
+    "style",
+    "font-size:30px; color:white; background:purple"
+  );
+  choice4.setAttribute(
+    "style",
+    "font-size:30px; color:white; background:purple"
+  );
   choice1.addEventListener("click", function handleClick(ev) {
     console.log(ev.target.textContent);
     secondsRemain -= 15;
-
     showScore();
   });
   choice2.addEventListener("click", function handleClick(ev) {
     console.log(ev.target.textContent);
     secondsRemain -= 15;
-
     showScore();
   });
   choice3.addEventListener("click", function handleClick(ev) {
     console.log(ev.target.textContent);
     secondsRemain -= 15;
-
     showScore();
   });
   choice4.addEventListener("click", function handleClick(ev) {
     console.log(ev.target.textContent);
-
     showScore();
   });
 }
-score = secondsRemain;
-console.log(score)
-////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
 function tickTock() {
-  // function to count down seconds, needs seperate variable with number value for 'seconds'
   var timerInterval = setInterval(function () {
     secondsRemain--;
 
     counter.textContent = secondsRemain;
-/*probably need another if statement here to get timer to stop if all questions were answered. 
-May need a return to call the remaining seconds to the variable secondsRemain, or create new variable with updated timer*/
 
-    if (secondsRemain === 0 || secondsRemain < -1) {
+    if (secondsRemain === 0 || secondsRemain < 0) {
       clearInterval(timerInterval);
       showScore();
     }
-  }, 1000); // make sure this is set to 1000 before turn in
+  }, 1000);
 }
 
-//Will need a function to showscore at end of quiz, and place to inputuser intials and save it to local storage with "score"
 function showScore() {
-  qBox.setAttribute("style", "display:none")
+  qBox.setAttribute("style", "display:none");
+  body.appendChild(scoreBoardEl);
+  scoreBoardEl.setAttribute(
+    "style",
+    "font-size:26px; text-align:center; background:yellow;"
+  );
+  body.appendChild(initialsLabel);
+  body.appendChild(initialsInput);
+  
+  scoreBoardEl.textContent =
+    "Thanks for playing! Input your Initials to track your High Scores!";
   score = counter.textContent;
+  initialsLabel.setAttribute(
+    "style",
+    "display:flex; align-items:center; flex-direction:column"
+  );
+  initialsInput.setAttribute(
+    "style",
+    "display:flex justify-content:center; align-items:center"
+  );
+
+  // ini
+  submitHS.setAttribute("style", "display:block-inline")
+  submitHS.addEventListener("click", function(event) {
+    event.preventDefault();
+    var highScore = {
+      initials: initials.value.trim(),
+      score: score.value.trim(),
+    }
+    localStorage.setItem("highScore", JSON.stringify(highScore));
+  });
 }
-////////////////////////////////////////////////////TEST SCRIPT\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+//check activities for the local storage set up
+// will need these inputted somehow
+// --> JSON.parse(window.localStorage.getItem("highscores"))
+// --> window.localStorage.setItem("highscores", JSON.stringify(highscores))
