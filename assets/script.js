@@ -305,7 +305,6 @@ function question4() {
     console.log(ev.target.textContent);
     showScore();
   });
-  // return endScore;
 }
 
 function tickTock() {
@@ -347,18 +346,22 @@ function showScore() {
     "style",
     "display:flex justify-content:center; align-items:center"
   );
-  submitHS.addEventListener("click", function(event) {
-    event.preventDefault();
+  submitHS.addEventListener("click", function() {
+    // event.preventDefault();
     var highScore = {
       initials: initialsInput.value,
       endScore: endScore,
     }
-    localStorage.setItem("highScore", JSON.stringify(highScore));
-  });
-}
-seeHighScores.addEventListener("click", function(){
-  window.localStorage.getItem("highScore")
-  JSON.parse(window.localStorage.getItem("highScore"));
 
-})
+    localStorage.setItem("highScore", JSON.stringify(highScore));
+    seeHighScores.addEventListener("click", function(){
+      window.localStorage.getItem("highScore")
+      JSON.parse(window.localStorage.getItem({highScore}));
+      alert( "Initials: " + highScore.initials + " ;   " +  "Last High Score: "+ highScore.endScore)
+    })
+  });
+
+}
+
+
 
